@@ -5,6 +5,6 @@ Picture Publishing Spring Boot Java Project
 After installing PostgreSql Server <br>
 create new Schema called "picture_publishing"
 
-#Swagger UI
+# Swagger UI
 URL: http://localhost:8088/picture-publishing/swagger-ui/
 
