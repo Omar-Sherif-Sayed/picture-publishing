@@ -1,0 +1,37 @@
+server:
+  port: 8088
+  servlet:
+    context-path: /picture-publishing
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
+    generate-ddl: true
+    database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+    defer-datasource-initialization: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL9Dialect
+        format_sql: true
+        default_schema: picture_publishing
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=picture_publishing?allowPublicKeyRetrieval=true
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  sql:
+    init:
+      mode: always
+  servlet:
+    multipart:
+      max-file-size: 30MB
+      max-request-size: 30MB
+      # The "file:" causes the content to be reloaded on refreshing the browser
+      # https://stackoverflow.com/questions/43693393/reload-static-content-spring-boot-application
+  web:
+    resources:
+      static-locations[0]: file:src/main/resources/static/
+      static-locations[1]: classpath:/static/
