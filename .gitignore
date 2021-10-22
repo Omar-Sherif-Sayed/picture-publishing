@@ -37,6 +37,7 @@ build/
 
 # Log file
 *.log
+src/main/resources/logs/
 
 # BlueJ files
 *.ctxt
